@@ -19,10 +19,6 @@
        "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.76",
     );
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-    //for debug only!
-    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
     $resp = curl_exec($curl);
     curl_close($curl);
     $listOut = [];
