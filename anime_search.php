@@ -34,7 +34,12 @@ for ($i = 1; $i < count($listAnime); $i++) {
         (strpos($content[0], "eps") == true ||
             strpos($content[0], "vols") == true)
     ) {
+      	$rate = explode('<', explode('Scored ', $listAnime[$i])[1])[0];
+      	$mens = trim(explode('<br>', explode('Scored', trim(explode(' members<br>', $listAnime[$i])[0]))[1])[1]);
+
         $slice = explode("add", $content[0]);
+      	$aniobj["rate"] = $rate;
+      	$aniobj["members"] = $mens;
         $aniobj["name"] = trim($slice[0]);
         $aniobj["type"] = trim($slice[1]);
         if (strpos($aniobj["type"], "eps")) {
