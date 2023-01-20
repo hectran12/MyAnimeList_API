@@ -39,6 +39,16 @@ for ($i = 1; $i < count($listAnime); $i++) {
 
         $slice = explode("add", $content[0]);
       	$aniobj["rate"] = $rate;
+      	
+      	
+      	
+      	if ($aniobj["rate"] < 3) $aniobj["Recommend_to_see"] = "Bad";
+      	if ($aniobj["rate"] >= 3) $aniobj["Recommend_to_see"] = "Not good";
+      	if ($aniobj["rate"] > 5) $aniobj["Recommend_to_see"] = "okay";
+      	if ($aniobj["rate"] > 7) $aniobj["Recommend_to_see"] = "nice";
+      	if ($aniobj["rate"] > 9) $aniobj["Recommend_to_see"] = "wonderful";
+      
+      
       	$aniobj["members"] = $mens;
         $aniobj["name"] = trim($slice[0]);
         $aniobj["type"] = trim($slice[1]);
